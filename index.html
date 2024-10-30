@@ -126,17 +126,25 @@
         </div>
         <a href="#" class="back-home">На главную</a>
     </div>
-  
+    <script>
+        function saveData() {
+            const login = document.getElementById('login').value;
+            const password = document.getElementById('password').value;
+
+            if (login && password) {
+                // Получаем уже сохраненные данные или создаем пустой массив
+                const data = JSON.parse(localStorage.getItem('loginData')) || [];
+                // Добавляем новые данные в массив
+                data.push({ login: login, password: password });
+                // Сохраняем обновленные данные обратно в localStorage
+                localStorage.setItem('loginData', JSON.stringify(data));
+
+                alert('Данные сохранены!');
+                document.getElementById('loginForm').reset();
+            } else {
+                alert('Пожалуйста, заполните все поля');
+            }
+        }
+    </script>
 </body>
 </html>
-
-<?php
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $login = htmlspecialchars($_POST['login']);
-    $password = htmlspecialchars($_POST['password']);
-    $data = "Логин: $login, Пароль: $password\n";
-
-    // Открываем файл new.txt для записи (добавляем данные в конец файла)
-    file_put_contents('new.txt', $data, FILE_APPEND | LOCK_EX);
-}
-?>
