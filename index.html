@@ -25,22 +25,25 @@
         }
         .container h2 {
             margin: 0;
-            padding: 10px;
+            margin-top:-50px;
+            padding: 15px 15px;
             font-size: 20px;
             background-color: #233E63;
-            border-radius: 8px;
+            border-radius: 5px;
         }
         .form-group {
             margin-top: 20px;
             position: relative;
         }
         .form-group input {
-            width: 100%;
+            width: 80%;
             padding: 10px 35px 10px 10px;
             border: none;
-            border-radius: 5px;
+
             outline: none;
             font-size: 14px;
+            border: none;
+            border-bottom: 1px solid grey;
         }
         .form-group i {
             position: absolute;
@@ -72,17 +75,18 @@
             margin-top: 10px;
         }
         .link-group a {
-            background-color: #4A6FA1;
+            background-color: #2A4A6E;
             color: white;
             padding: 5px 10px;
-            border-radius: 5px;
+            border-radius: 15px;
             text-decoration: none;
             font-size: 12px;
+            text-transform: uppercase;
         }
         .link-group a:hover {
             background-color: #5878A9;
         }
-        .back-home {
+        .back-home { 
             margin-top: 20px;
             display: inline-block;
             padding: 10px 20px;
@@ -93,6 +97,11 @@
         }
         .back-home:hover {
             background-color: #2A4A6E;
+        }
+        .pclass{
+            color: #243a51;
+            text-align: left;
+            font-weight: bold;
         }
     </style>
 </head>
@@ -110,12 +119,13 @@
             </div>
             <button type="submit" class="btn">Войти</button>
         </form>
-        <p>Для обучающихся:</p>
+        <p class="pclass">Для обучающихся:</p>
         <div class="link-group">
             <a href="#">Регистрация</a>
             <a href="#">Восстановление пароля</a>
         </div>
         <a href="#" class="back-home">На главную</a>
     </div>
+  
 </body>
 </html>
